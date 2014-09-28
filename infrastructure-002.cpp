@@ -1,37 +1,25 @@
 //============================================================================
-// Name        : infrastructure-003.cpp
+// Name        : infrastructure-002.cpp
 // Author      : arhaasdev (Adam Robert Haas)
 // Version     : 0.0.1
 // Copyright   : Marmots
-// Description : Random numbers
+// Description : Shows how to format floating point outputs
 //============================================================================
 
 #include <iostream>
-#include <cstdlib>
-
-
-int playDice();
-
-
-
-
 using namespace std;
-
-int playDice();
 
 int main()
 {
-	int count = 0;
+	double amount;
+	cout << "Enter an amount in dollars: $";
+	cin >> amount;
 
-	do {
-		cout << playDice() << endl;
-		count++;
-	} while (count < 100);
+	cout.setf(ios::fixed);
+	cout.setf(ios::showpoint);
+	cout.precision(2);
+
+	cout << "That\'s like $" << amount << "." << endl;
 
 	return 0;
-}
-
-int playDice()
-{
-	return rand() % 12 + 1;
 }
